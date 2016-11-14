@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean	id="notepadService"
+		class="net.gondor.notepad.service.impl.NotepadServiceImpl">
+	<property name="notepadBiz" ref="notepadBiz"></property>
+</bean>
+
+<bean	id="notepadBiz"
+		class="net.gondor.notepad.biz.impl.NotepadBizImpl">
+	<property name="notepadDao" ref="notepadDao"></property>
+</bean>
+
+<bean	id="notepadDao"
+		class="net.gondor.notepad.dao.impl.NotepadDaoImpl">
+	<property name="sqlSessionTemplate" ref="sqlSessionTemplate"></property>
+</bean>
+
+</beans>
